@@ -1,0 +1,268 @@
+/* Terminal Tree Plugin Styles */
+
+/* Global styles */
+Screen {
+    background: $surface;
+    color: $text;
+}
+
+/* Header and Footer */
+Header {
+    background: $primary;
+    color: $text;
+    height: 3;
+    dock: top;
+}
+
+Footer {
+    background: $primary;
+    color: $text;
+    height: 1;
+    dock: bottom;
+}
+
+/* Path input area */
+#path_input {
+    height: 2;
+    dock: top;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content area */
+#main_content {
+    height: 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tree view panel */
+#tree_view {
+    width: 1fr;
+    min-width: 30;
+    max-width: 60%;
+    border: solid $primary;
+    background: $surface;
+    margin: 0;
+    padding: 0;
+}
+
+#tree_view Tree {
+    background: $surface;
+    color: $text;
+    scrollbar-background: $surface;
+    scrollbar-color: $primary;
+}
+
+#tree_view Tree:focus {
+    border: solid $accent;
+}
+
+/* File preview panel */
+#file_preview {
+    width: 2fr;
+    border: solid $primary;
+    background: $surface;
+    margin: 0;
+    padding: 0;
+}
+
+#file_preview Static {
+    background: $surface;
+    color: $text;
+    padding: 1;
+    scrollbar-background: $surface;
+    scrollbar-color: $primary;
+}
+
+#file_preview:focus {
+    border: solid $accent;
+}
+
+/* Path input widget styles */
+PathInput {
+    height: 3;
+    border: solid $primary;
+    background: $surface;
+}
+
+PathInput Input {
+    background: $surface;
+    color: $text;
+    border: none;
+    height: 1;
+}
+
+PathInput Input:focus {
+    background: $surface;
+    border: solid $accent;
+}
+
+PathInput Static {
+    background: $surface;
+    color: $text;
+    height: 1;
+    padding: 0 1;
+}
+
+PathInput .path-valid {
+    color: $success;
+}
+
+PathInput .path-invalid {
+    color: $error;
+}
+
+PathInput .path-components {
+    color: $text-muted;
+}
+
+/* Tree view widget styles */
+TreeView {
+    border: solid $primary;
+    background: $surface;
+}
+
+TreeView Tree {
+    background: $surface;
+    color: $text;
+    scrollbar-background: $surface;
+    scrollbar-color: $primary;
+}
+
+TreeView Tree:focus {
+    border: solid $accent;
+}
+
+/* File preview widget styles */
+FilePreview {
+    border: solid $primary;
+    background: $surface;
+}
+
+FilePreview Static {
+    background: $surface;
+    color: $text;
+    padding: 1;
+    scrollbar-background: $surface;
+    scrollbar-color: $primary;
+}
+
+FilePreview:focus {
+    border: solid $accent;
+}
+
+/* Focus indicators */
+Widget:focus {
+    border: solid $accent;
+}
+
+/* Scrollbar styles */
+Widget {
+    scrollbar-background: $surface;
+    scrollbar-color: $primary;
+    scrollbar-color-hover: $accent;
+    scrollbar-color-active: $warning;
+}
+
+/* Panel borders */
+.panel {
+    border: solid $primary;
+    background: $surface;
+}
+
+.panel:focus {
+    border: solid $accent;
+}
+
+/* Status indicators */
+.status-good {
+    color: $success;
+}
+
+.status-warning {
+    color: $warning;
+}
+
+.status-error {
+    color: $error;
+}
+
+.status-info {
+    color: $primary;
+}
+
+/* Text styles */
+.text-muted {
+    color: $text-muted;
+}
+
+.text-bold {
+    text-style: bold;
+}
+
+.text-italic {
+    text-style: italic;
+}
+
+.text-underline {
+    text-style: underline;
+}
+
+/* File type indicators */
+.file-directory {
+    color: $primary;
+    text-style: bold;
+}
+
+.file-text {
+    color: $text;
+}
+
+.file-code {
+    color: $success;
+}
+
+.file-image {
+    color: $warning;
+}
+
+.file-binary {
+    color: $text-muted;
+}
+
+/* Interactive elements */
+.clickable {
+    text-style: underline;
+}
+
+.clickable:hover {
+    background: $primary 20%;
+}
+
+/* Loading states */
+.loading {
+    color: $text-muted;
+    text-style: italic;
+}
+
+/* Error states */
+.error {
+    color: $error;
+    background: $error 10%;
+    border: solid $error;
+}
+
+/* Success states */
+.success {
+    color: $success;
+    background: $success 10%;
+    border: solid $success;
+}
+
+/* Warning states */
+.warning {
+    color: $warning;
+    background: $warning 10%;
+    border: solid $warning;
+} 
