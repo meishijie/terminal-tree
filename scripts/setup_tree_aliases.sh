@@ -3,8 +3,9 @@
 
 echo "🌲 设置 Tree 命令别名和版本..."
 
-# 当前项目路径
-PROJECT_PATH="/Volumes/meiMacMedia/app/monogames"
+# 获取脚本所在目录的父目录作为项目路径
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_PATH="$(dirname "$SCRIPT_DIR")"
 
 # 备份现有的shell配置
 SHELL_CONFIG="$HOME/.zshrc"
@@ -43,9 +44,9 @@ tree() {
         "\$HOME/.local/bin/tree" "\$target_path"
     else
         # 备用：使用项目本地版本
-        if [[ -f "$PROJECT_PATH/test_app.py" ]]; then
+        if [[ -f "$PROJECT_PATH/run.py" ]]; then
             cd "$PROJECT_PATH"
-            python test_app.py "\$target_path"
+            python run.py "\$target_path"
             cd - > /dev/null
         else
             echo "❌ Tree应用未找到。请检查安装或运行 ./install_simple_tree.sh"
@@ -55,10 +56,9 @@ tree() {
 }
 
 # 其他版本的别名
-alias tree-full='cd "$PROJECT_PATH" && python test_app.py'
-alias tree-compact='cd "$PROJECT_PATH" && python compact_tree.py'
-alias tree-simple='cd "$PROJECT_PATH" && python simple_tree_app.py'
-alias tree-minimal='cd "$PROJECT_PATH" && python minimal_tree.py'
+alias tree-full='cd "$PROJECT_PATH" && python run.py'
+alias tree-compact='cd "$PROJECT_PATH" && python examples/compact_tree.py'
+alias tree-simple='cd "$PROJECT_PATH" && python examples/simple_tree_app.py'
 
 # 传统tree命令（如果需要）
 alias tree-brew='/opt/homebrew/bin/tree 2>/dev/null || /usr/bin/tree 2>/dev/null || echo "❌ 传统tree命令未找到"'
@@ -73,7 +73,6 @@ tree-help() {
     echo "  tree-full [path]  - 启动完整版（三面板布局）"
     echo "  tree-simple       - 启动简化版（双面板布局）"
     echo "  tree-compact      - 启动紧凑版（单面板布局）"
-    echo "  tree-minimal      - 启动最简版"
     echo "  tree-brew         - 使用传统命令行tree"
     echo ""
     echo "应用内快捷键:"
@@ -101,7 +100,6 @@ echo "  tree /path        - 在指定目录启动"
 echo "  tree-full         - 完整版"
 echo "  tree-compact      - 紧凑版"
 echo "  tree-simple       - 简化版"
-echo "  tree-minimal      - 最简版"
 echo "  tree-help         - 显示帮助"
 echo ""
 echo "🔄 重新启动终端或运行: source $SHELL_CONFIG"

@@ -4,7 +4,9 @@
 echo "🧪 测试 Python Tree 命令设置"
 echo "============================="
 
-PROJECT_PATH="/Volumes/meiMacMedia/app/monogames"
+# 获取脚本所在目录的父目录作为项目路径
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_PATH="$(dirname "$SCRIPT_DIR")"
 
 # 检查项目目录
 echo "1. 检查项目目录..."
@@ -18,10 +20,9 @@ fi
 # 检查Python应用文件
 echo "2. 检查应用文件..."
 apps=(
-    "test_app.py:完整版测试应用"
-    "compact_tree.py:紧凑版应用"
-    "simple_tree_app.py:简化版应用"
-    "minimal_tree.py:最简版应用"
+    "run.py:主启动脚本"
+    "examples/compact_tree.py:紧凑版应用"
+    "examples/simple_tree_app.py:简化版应用"
 )
 
 for app_info in "${apps[@]}"; do

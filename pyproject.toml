@@ -53,11 +53,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/terminal-tree"
-Repository = "https://github.com/yourusername/terminal-tree.git"
-Documentation = "https://github.com/yourusername/terminal-tree#readme"
-Issues = "https://github.com/yourusername/terminal-tree/issues"
-Changelog = "https://github.com/yourusername/terminal-tree/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/YOUR_USERNAME/terminal-tree"
+Repository = "https://github.com/YOUR_USERNAME/terminal-tree.git"
+Documentation = "https://github.com/YOUR_USERNAME/terminal-tree#readme"
+Issues = "https://github.com/YOUR_USERNAME/terminal-tree/issues"
+Changelog = "https://github.com/YOUR_USERNAME/terminal-tree/blob/main/CHANGELOG.md"
 
 [project.scripts]
 terminal-tree = "terminal_tree_plugin.main:main"

@@ -2,14 +2,15 @@
 
 echo "🌲 Installing simple 'tree' command globally..."
 
-# 获取当前目录
-CURRENT_DIR="$(pwd)"
+# 获取脚本所在目录的父目录作为项目路径
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_PATH="$(dirname "$SCRIPT_DIR")"
 
 # 创建用户bin目录
 mkdir -p "$HOME/.local/bin"
 
 # 创建自包含的tree脚本
-cat > "$HOME/.local/bin/tree" << 'EOF'
+cat > "$HOME/.local/bin/tree" << EOF
 #!/usr/bin/env python3
 
 import sys
@@ -17,7 +18,7 @@ import os
 from pathlib import Path
 
 # 添加项目路径
-project_path = "/Volumes/meiMacMedia/app/monogames"
+project_path = "$PROJECT_PATH"
 sys.path.insert(0, project_path)
 
 def main():
